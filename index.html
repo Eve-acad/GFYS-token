@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$GKYS on SOL</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cardo&family=Crimson+Text&family=Montserrat:ital,wght@0,500;0,600;1,100&family=Nova+Square&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="/Icon.png"/>
+</head>
+<body>
+    <canvas id="background"></canvas>
+    <div id="content">
+        <div id="links">
+            <a href="#">Solscan</a>
+            <a href="#">Rug Checker</a>
+            <a href="#">BirdsEye</a>
+        </div>
+        <h1>$GKYS</h1>
+        <h2>Go Kill Yourself</h2>
+        <p>
+            "If somebody's going to try to blackmail me with advertising? Blackmail me with money? Go Kill yourself. Go. Kill. Yourself. <b>Is that clear?</b>""
+        </p>
+        <div id="socialButtons">
+            <button><i class="fab fa-twitter"></i></button>
+            <button id="kissYourselfButton">$Kill Yourself Here</button>
+            <button><i class="fab fa-telegram"></i></button>
+        </div>
+    </div>
+
+    <script>
+        // Set up canvas for dynamic structure
+        const canvas = document.getElementById('background');
+        const ctx = canvas.getContext('2d');
+
+        // Set background GIF
+        canvas.style.backgroundImage = 'url("Background.gif")';
+        canvas.style.backgroundSize = 'cover';
+        canvas.style.backgroundPosition = 'center top'; // Adjust this for positioning
+
+        // Set canvas size
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        // Create dynamic structure (you can customize this)
+        function drawDynamicStructure() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Draw dynamic elements
+            const circleRadius = Math.min(canvas.width, canvas.height) / 2.5; // Adjust the radius as needed
+            ctx.beginPath();
+            ctx.arc(canvas.width / 2, canvas.height / 2, circleRadius, 0, 2 * Math.PI);
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.2)'; // Adjust the opacity (last value) as needed
+            ctx.fill();
+            ctx.lineWidth = 5;
+            ctx.strokeStyle = 'rgba(255, 255, 255, 0.3)';
+            ctx.stroke();
+        }
+
+        // Update canvas on window resize
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            drawDynamicStructure();
+        });
+
+        // Initialize dynamic structure
+        drawDynamicStructure();
+    </script>
+</body>
+</html>
